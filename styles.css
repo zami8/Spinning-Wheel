@@ -1,0 +1,72 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: white;
+    font-family: Arial, sans-serif;
+}
+
+.wheel-container {
+    position: relative;
+}
+
+.wheel {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    border: 5px solid #FFDE4D;
+    position: relative;
+    overflow: hidden;
+    transform: rotate(0deg);
+    transition: transform 3s ease-out;
+    background-image: radial-gradient(circle, #4535C1, #4535C1, #2E236C, #17153B);
+}
+
+
+.dot{
+    position: absolute;
+    width: 400px;
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #FFDE4D;
+    transform-origin: 50% 100%;
+}
+
+.segment {
+    position: absolute;
+    width: 400px;
+    height: 200px;
+    clip-path: circle(100%);
+    display: flex;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    transform-origin: 50% 100%;
+}
+
+.segment {
+    transform: rotate(var(--rotate));
+}
+
+.segment:nth-child(1) { --rotate: 0deg; }
+.segment:nth-child(2) { --rotate: 60deg; }
+.segment:nth-child(3) { --rotate: 120deg; }
+.segment:nth-child(4) { --rotate: 180deg; }
+.segment:nth-child(5) { --rotate: 240deg; }
+.segment:nth-child(6) { --rotate: 300deg; }
+
+
+#spin-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: red;
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+}
